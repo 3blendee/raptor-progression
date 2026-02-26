@@ -1,0 +1,12 @@
+# Generated encoded files
+base64url/
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
