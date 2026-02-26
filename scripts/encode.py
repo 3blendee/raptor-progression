@@ -20,6 +20,9 @@ SLOT_MAP = {
     'tweakdefs6.lua': 'tweakdefs6',
     'tweakunits.lua':  'tweakunits',
     'tweakunits1.lua': 'tweakunits1',
+    'tweakunits2.lua': 'tweakunits2',
+    'tweakunits3.lua': 'tweakunits3',
+    'tweakunits4.lua': 'tweakunits4',
 }
 
 CHAR_LIMIT = 50000
