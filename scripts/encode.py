@@ -23,6 +23,12 @@ SLOT_MAP = {
 
 CHAR_LIMIT = 50000
 
+# Lobby setup commands (run before modoptions)
+LOBBY_COMMANDS = [
+    '!rename Raptor Unit Focused',
+    '!map Full Metal Plate',
+]
+
 # Modoptions for raptor progression game mode
 MODOPTIONS = [
     '!bset raptor_raptorstart alwaysbox',
@@ -33,6 +39,11 @@ MODOPTIONS = [
     '!bset raptor_wavefrequencymult 1.3',
     '!bset raptor_unitspawnmult 1.2',
     '!bset raptor_difficulty normal',
+    '!bset startmetal 1500',
+    '!bset startenergy 1500',
+    '!bset startmetalstorage 1500',
+    '!bset startenergystorage 1500',
+    '!bset startoptions_startpos chooseinlobby',
 ]
 
 
@@ -95,7 +106,11 @@ def main():
         f.write("# Paste these into BAR lobby chat after !boss\n")
         f.write("# ==========================================\n\n")
 
-        f.write("# --- Modoptions ---\n")
+        f.write("# --- Lobby Setup ---\n")
+        for cmd in LOBBY_COMMANDS:
+            f.write(cmd + '\n')
+
+        f.write("\n# --- Modoptions ---\n")
         for cmd in MODOPTIONS:
             f.write(cmd + '\n')
 
