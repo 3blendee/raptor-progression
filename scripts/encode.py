@@ -27,27 +27,79 @@ SLOT_MAP = {
 
 CHAR_LIMIT = 50000
 
-# Lobby setup commands (run before modoptions)
+# Lobby setup commands (run first)
 LOBBY_COMMANDS = [
     '!rename Raptor Unit Focused',
+    '!preset coop',
     '!map Full Metal Plate',
+    '!teamsize 12',
+    '!autobalance off',
+    '!addbox 82 82 117 117 2',
+    '!clearbox 1',
+    '!balance',
 ]
 
 # Modoptions for raptor progression game mode
 MODOPTIONS = [
+    # --- Raptor settings ---
     '!bset raptor_raptorstart alwaysbox',
     '!bset raptor_endless 0',
-    '!bset raptor_queencount 1',
-    '!bset raptor_queenhatchtimemult 0.7',
-    '!bset raptor_graceperiodmult 0.8',
-    '!bset raptor_wavefrequencymult 1.3',
-    '!bset raptor_unitspawnmult 1.2',
-    '!bset raptor_difficulty normal',
-    '!bset startmetal 1500',
-    '!bset startenergy 1500',
-    '!bset startmetalstorage 1500',
-    '!bset startenergystorage 1500',
-    '!bset startoptions_startpos chooseinlobby',
+    '!bset raptor_difficulty epic',
+    '!bset raptor_queen_count 8',
+    '!bset raptor_queentimemult 1.3',
+    '!bset raptor_spawncountmult 3',
+    '!bset raptor_spawntimemult 1',
+    '!bset raptor_firstwavesboost 6',
+    '!bset raptor_graceperiodmult 3',
+    # --- Starting resources ---
+    '!bset startmetal 10000',
+    '!bset startenergy 10000',
+    '!bset startmetalstorage 10000',
+    '!bset startenergystorage 10000',
+    # --- Commander & drones ---
+    '!bset evocom 1',
+    '!bset commanderbuildersenabled enabled',
+    '!bset commanderbuildersbuildpower 1000',
+    '!bset commanderbuildersrange 1000',
+    '!bset assistdronesenabled enabled',
+    '!bset assistdronesbuildpowermultiplier 1',
+    # --- Unit restrictions ---
+    '!bset unit_restrictions_noextractors 1',
+    '!bset unit_restrictions_noair 0',
+    '!bset unit_restrictions_noendgamelrpc 0',
+    '!bset unit_restrictions_nolrpc 0',
+    '!bset unit_restrictions_nonukes 1',
+    '!bset unit_restrictions_notacnukes 0',
+    '!bset maxunits 10000',
+    '!bset forceallunits 1',
+    '!bset scavunitsforplayers 1',
+    # --- Multipliers ---
+    '!bset multiplier_builddistance 1.5',
+    '!bset multiplier_buildpower 1',
+    '!bset multiplier_buildtimecost 1',
+    '!bset multiplier_energyconversion 1',
+    '!bset multiplier_energycost 1',
+    '!bset multiplier_energyproduction 1',
+    '!bset multiplier_losrange 1',
+    '!bset multiplier_maxdamage 1',
+    '!bset multiplier_maxvelocity 1',
+    '!bset multiplier_metalcost 1',
+    '!bset multiplier_metalextraction 1',
+    '!bset multiplier_radarrange 1',
+    '!bset multiplier_resourceincome 1',
+    '!bset multiplier_shieldpower 2',
+    '!bset multiplier_turnrate 1',
+    '!bset multiplier_weapondamage 1',
+    '!bset multiplier_weaponrange 1',
+    # --- Gameplay ---
+    '!bset disablemapdamage 1',
+    '!bset experimentalextraunits 1',
+    '!bset experimentallegionfaction 1',
+    '!bset experimentalshields bounceeverything',
+    '!bset releasecandidates 1',
+    '!bset draft_mode disabled',
+    '!bset unit_market 0',
+    '!bset nowasting all',
 ]
 
 
