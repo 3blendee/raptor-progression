@@ -36,6 +36,11 @@ LOBBY_COMMANDS = [
     '!autobalance off',
     '!addbox 82 82 117 117 2',
     '!clearbox 1',
+    '!commanderbuildersenabled enabled',
+    '!commanderbuildersbuildpower 1000',
+    '!commanderbuildersrange 1000',
+    '!assistdronesenabled enabled',
+    '!assistdronesbuildpowermultiplier 1',
     '!balance',
 ]
 
@@ -58,11 +63,6 @@ MODOPTIONS = [
     '!bset startenergystorage 10000',
     # --- Commander & drones ---
     '!bset evocom 1',
-    '!bset commanderbuildersenabled enabled',
-    '!bset commanderbuildersbuildpower 1000',
-    '!bset commanderbuildersrange 1000',
-    '!bset assistdronesenabled enabled',
-    '!bset assistdronesbuildpowermultiplier 1',
     # --- Unit restrictions ---
     '!bset unit_restrictions_noextractors 1',
     '!bset unit_restrictions_noair 0',

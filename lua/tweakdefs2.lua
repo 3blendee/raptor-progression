@@ -83,20 +83,33 @@ do
         -- Factory build speed by tech level
         -- T1 factories pump units fast on their own
         -- T2/T3 factories need nano turret assistance
-        if uDef.buildoptions and #uDef.buildoptions > 0
-           and (not uDef.canmove or (uDef.speed and uDef.speed == 0)) then
+        -- Detect factories: has buildoptions and is a structure (subfolder with Fact/Lab/Plant/Yard)
+        local hasBuildoptions = false
+        if uDef.buildoptions then
+            for _ in pairs(uDef.buildoptions) do
+                hasBuildoptions = true
+                break
+            end
+        end
+        local subfolder = (uDef.customparams and uDef.customparams.subfolder) or ""
+        local isFactory = hasBuildoptions and (
+            subfolder:lower():match("fact")
+            or subfolder:lower():match("lab")
+            or subfolder:lower():match("plant")
+            or subfolder:lower():match("yard")
+            or subfolder:lower():match("platform")
+        )
+        if isFactory and uDef.workertime then
             local factoryTL = getTechLevel(uDef) or 1
-            if uDef.workertime then
-                if factoryTL <= 1 then
-                    -- T1 factories: 80% faster build speed
-                    uDef.workertime = math.floor(uDef.workertime * 1.8)
-                elseif factoryTL == 2 then
-                    -- T2 factories: 20% faster, still want nano help
-                    uDef.workertime = math.floor(uDef.workertime * 1.2)
-                else
-                    -- T3 factories: 10% faster, really need nanos
-                    uDef.workertime = math.floor(uDef.workertime * 1.1)
-                end
+            if factoryTL <= 1 then
+                -- T1 factories: 80% faster build speed
+                uDef.workertime = math.floor(uDef.workertime * 1.8)
+            elseif factoryTL == 2 then
+                -- T2 factories: 20% faster, still want nano help
+                uDef.workertime = math.floor(uDef.workertime * 1.2)
+            else
+                -- T3 factories: 10% faster, really need nanos
+                uDef.workertime = math.floor(uDef.workertime * 1.1)
             end
             goto continue
         end
