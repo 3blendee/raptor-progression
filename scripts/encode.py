@@ -17,6 +17,7 @@ SLOT_MAP = {
     'tweakdefs3.lua': 'tweakdefs3',
     'tweakdefs4.lua': 'tweakdefs4',
     'tweakdefs5.lua': 'tweakdefs5',
+    'tweakdefs6.lua': 'tweakdefs6',
     'tweakunits.lua':  'tweakunits',
     'tweakunits1.lua': 'tweakunits1',
 }
